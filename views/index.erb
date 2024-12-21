@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Printer Status</title>
+</head>
+<body>
+  <h1>Printer Status</h1>
+  <% if @fetch_printers_data && !@fetch_printers_data.empty? %>
+    <% @fetch_printers_data.each do |printer| %>
+      <h2>Printer: <%= printer[:alias] %></h2>
+      <h3>Model: <%= printer[:model] %></h3>
+      <h3>IP: <%= printer[:ip] %></h3>
+      <p><strong>Black Toner Name: </strong><%= printer[:data]['black_toner_name'] %></p>
+      <p><strong>Black Toner Capacity: </strong><%= printer[:data]['black_toner_capacity'] %>%</p>
+      <p><strong>Black Toner Remaining: </strong><%= printer[:data]['black_toner_level'] %>%</p>
+      <% if printer[:data]['additional_oid'] %>
+        <p><strong>Impressions: </strong><%= printer[:data]['additional_oid'] %></p>
+      <% end %>
+    <% end %>
+  <% else %>
+    <p>No printer data available.</p>
+  <% end %>
+</body>
+</html>
