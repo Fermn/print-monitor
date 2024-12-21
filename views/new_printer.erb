@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Printer</title>
+</head>
+<body>
+  <h1>Add New Printer</h1>
+  <form action="/printers" method="post">
+    <label for="alias">Alias:</label>
+    <input type="text" id="alias" name="alias" required><br>
+    <label for="printer_ip">Printer IP:</label>
+    <input type="text" id="printer_ip" name="printer_ip" required><br>
+    <input type="submit" value="Add Printer">
+  </form>
+  <a href="/printers">Back to Printer List</a>
+</body>
+</html>
