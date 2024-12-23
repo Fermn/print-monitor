@@ -26,6 +26,18 @@ get '/printers/new' do
   erb :new_printer
 end
 
+post '/printers' do
+  printer = {
+    'alias' => params[:alias],
+    'printer_ip' => params[:printer_ip]
+  }
+  PRINTERS << printer
+  File.open('printers.json', 'w') do |f|
+    f.write(JSON.pretty_generate(PRINTERS))
+  end
+  redirect '/printers'
+end
+
 get '/printers' do
   @fetch_printers_data = PRINTERS.map do |printer|
     data = fetch_printer_data(printer['printer_ip'], COMMON_OIDS, printer['specific_oids'])
