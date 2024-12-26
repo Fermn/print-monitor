@@ -2,21 +2,21 @@
 <html>
 <head>
   <title>Printer Status</title>
-  <link rel="stylesheet" href="./public/css/tailwind.css"> 
+  <link rel="stylesheet" href="./public/css/tailwind-built.css"> 
 </head>
 <body class="bg-midnight text-gray-900">
   <div class="container mx-auto p-4">
-  <h1 class="text-3xl font-bold mb-4">Printer Status</h1>
+  <h1 class="text-4xl font-extrabold text-blue-500 mb-4">Printer Ink Status</h1>
   <% if @fetch_printers_data && !@fetch_printers_data.empty? %>
   <% @fetch_printers_data.each do |printer| %>
     <div>
-      <h2><%= printer['alias'] %></h2>
-      <p>IP: <%= printer['printer_ip'] %></p>
-      <p>Model: <%= printer['model'] %></p>
-      <% if printer['data'] %>
-        <p>Status: <%= printer['data']['status'] %></p>
-        <p>Pages Printed: <%= printer['data']['pages_printed'] %></p>
-        <p>Toner Level: <%= printer['data']['toner_level'] %></p>
+      <h2><%= printer[:alias] %></h2>
+      <p>IP: <%= printer[:printer_ip] %></p>
+      <p>Model: <%= printer[:model] %></p>
+      <% if printer[:data] %>
+        <p>Status: <%= printer[:data][:status] %></p>
+        <p>Pages Printed: <%= printer[:data][:pages_printed] %></p>
+        <p>Toner Level: <%= printer[:data][:toner_level] %></p>
       <% else %>
         <p>No data available for this printer.</p>
       <% end %>
