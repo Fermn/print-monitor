@@ -8,11 +8,11 @@ printer_config = JSON.parse(File.read('printers.json'))
 COMMON_OIDS = printer_config['common_oids']
 PRINTERS = printer_config['printers']
 
-def fetch_printer_data(printer_ip, oids)
+def fetch_printer_data(printer_ip, common_oids, specific_oids)
   data = {}
   if ENV['RACK_ENV'] == 'development'
     MOCK_PRINTERS.each do |printer|
-      return printer['data'] if printer['printer_ip'] == printer_ip
+      return printer[:data] if printer[:printer_ip] == printer_ip
     end
   else
     SNMP::Manager.open(host: printer_ip) do |manager|
@@ -30,7 +30,14 @@ end
 
 get '/' do
   @fetch_printers_data = if ENV['RACK_ENV'] == 'development'
-                           MOCK_PRINTERS
+                           MOCK_PRINTERS.map do |printer|
+                             {
+                               alias: printer[:alias],
+                               ip: printer[:printer_ip],
+                               model: printer[:model],
+                               data: printer[:data]
+                             }
+                           end
                          else
                            PRINTERS.map do |printer|
                              data = fetch_printer_data(printer['printer_ip'], COMMON_OIDS, printer['specific_oids'])
