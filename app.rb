@@ -2,13 +2,13 @@ require 'sinatra'
 require 'snmp'
 require 'json'
 
+# Load printer configuration from JSON file
 printer_config = JSON.parse(File.read('printers.json'))
 COMMON_OIDS = printer_config['common_oids']
 PRINTERS = printer_config['printers']
 
-def fetch_printer_data(printer_ip, common_oids, specific_oids)
+def fetch_printer_data(printer_ip, oids)
   data = {}
-  oids = common_oids.merge(specific_oids)
   SNMP::Manager.open(host: printer_ip) do |manager|
     oids.each do |key, oid|
       response = manager.get(oid)
@@ -19,35 +19,34 @@ def fetch_printer_data(printer_ip, common_oids, specific_oids)
 end
 
 get '/' do
+  @fetch_printers_data = PRINTERS.map do |printer|
+    specific_oids = printer['specific_oids'] || {}
+    oids = COMMON_OIDS.merge(specific_oids)
+    data = fetch_printer_data(printer['printer_ip'], oids)
+    {
+      alias: printer['alias'],
+      model: data['model'],
+      ip: printer['printer_ip'],
+      data: data
+    }
+  end
   erb :index
 end
 
-get '/printers/new' do
+get '/new' do
   erb :new_printer
 end
 
 post '/printers' do
   printer = {
     'alias' => params[:alias],
-    'printer_ip' => params[:printer_ip]
+    'printer_ip' => params[:printer_ip],
+    'specific_oids' => params[:specific_oids] || {}
   }
   PRINTERS << printer
+  puts "PRINTERS array after addition: #{PRINTERS.inspect}"
   File.open('printers.json', 'w') do |f|
-    f.write(JSON.pretty_generate(PRINTERS))
+    f.write(JSON.pretty_generate({ 'common_oids' => COMMON_OIDS, 'printers' => PRINTERS }))
   end
-  redirect '/printers'
-end
-
-get '/printers' do
-  @fetch_printers_data = PRINTERS.map do |printer|
-    data = fetch_printer_data(printer['printer_ip'], COMMON_OIDS, printer['specific_oids'])
-    {
-      alias: printer['alias'],
-      ip: printer['printer_ip'],
-      model: data['model'],
-      data: data
-    }
-  end
-  puts "Fetched printer data: #{@fetch_printer_data.inspect}"
-  erb :index
+  redirect '/'
 end
