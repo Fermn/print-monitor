@@ -2,15 +2,15 @@
 <html>
 <head>
   <title>Printer Status</title>
-  <link rel="stylesheet" href="./public/css/tailwind-built.css"> 
+  <link rel="stylesheet" href="/css/tailwind-built.css"> 
 </head>
 <body class="bg-midnight text-gray-900">
   <div class="container mx-auto p-4">
   <h1 class="text-4xl font-extrabold text-blue-500 mb-4">Printer Ink Status</h1>
   <% if @fetch_printers_data && !@fetch_printers_data.empty? %>
   <% @fetch_printers_data.each do |printer| %>
-    <div>
-      <h2><%= printer[:alias] %></h2>
+    <div class="block p-6 max-w-sm bg-green-200 rounded-lg shadow-lg mb-4">
+      <h2 class="flex"><%= printer[:alias] %></h2>
       <p>IP: <%= printer[:printer_ip] %></p>
       <p>Model: <%= printer[:model] %></p>
       <% if printer[:data] %>
@@ -25,5 +25,11 @@
 <% else %>
   <p>No printer data available.</p>
 <% end %>
+<a href="/new">
+<button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">
+  Open Authentication Modal
+</button>
+</a>
+<script src="/js/flowbite.js"></script>
 </body>
 </html>

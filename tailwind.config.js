@@ -4,11 +4,13 @@ module.exports = {
     "./*.{html, js, erb}",
     "./views/**/*.erb",
     "./public/**/*.html",
-    "./public/**/*.js"
+    "./public/**/*.js",
+    "./node_modules/flowbite/**/*.js",
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 }
-
