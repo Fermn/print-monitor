@@ -7,7 +7,6 @@
     "tailwindcss": "^3.4.17"
   },
   "scripts": {
-    "build:css": "npx postcss ./public/css/tailwind.css -o ./public/css/tailwind-built.css",
     "dev": "npx postcss ./public/css/tailwind.css -o ./public/css/tailwind-built.css --watch"
   },
   "dependencies": {
