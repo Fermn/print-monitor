@@ -12,6 +12,7 @@ module.exports = {
     colors: {
       'shell-green': '#ecede7',
       white: colors.white,
+      'black': colors.black,
     },
     extend: {},
   },

@@ -4,36 +4,47 @@
   <title>Printer Status</title>
   <link rel="stylesheet" href="/css/tailwind-built.css"> 
 </head>
-<body class="bg-shell-green text-gray-900">
-  <div class="container mx-auto p-4 mt-10 bg-white">
-  <h1 class="text-4xl font-extrabold text-blue-500 mb-10">Printer Ink Status</h1>
-  <% if @fetch_printers_data && !@fetch_printers_data.empty? %>
-  <% @fetch_printers_data.each do |printer| %>
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <div class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-700">
-        <h2 class="text-lg font-semibold mb-2"><%= printer[:alias] %></h2>
-        <p class="text-gray-600">IP: <%= printer[:printer_ip] %></p>
-        <p class="text-gray-600">Model: <%= printer[:model] %></p>
-        <% if printer[:data] %>
-          <p>Status: <%= printer[:data][:status] %></p>
-          <p>Pages Printed: <%= printer[:data][:pages_printed] %></p>
-          <p>Toner Level: <%= printer[:data][:toner_level] %></p>
+<!-- Entire background color -->
+<body class="bg-shell-green">
+  <!-- Module container -->
+  <div class="container shadow-2xl mx-auto rounded-xl p-6 mt-10 mb-10 bg-white">
+      <!-- Header -->
+       <h1 class="text-2xl text-left text-gray-500 font-extrabold mb-10">Ink Status.</h1>
+       <!-- Printer data --> 
+       <% if @fetch_printers_data && !@fetch_printers_data.empty? %>
+       <!-- Grid container --> 
+       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+       <% @fetch_printers_data.each do |printer| %>
+       <!-- Printer card -->
+       <div class="bg-white rounded-lg border-dashed border-2 border-gray-200 p-4 shadow hover:shadow-lg transition-shadow duration-300">
+                <h2 class="text-lg font-semibold mb-2"><%= printer[:alias] %></h2>
+                <p class="text-gray-600">IP: <%= printer[:printer_ip] %></p>
+                <p class="text-gray-600">Model: <%= printer[:model] %></p>
+
+                <% if printer[:data] %>
+                  <p class="text-gray-600">Status: <%= printer[:data][:status] %></p>
+                  <p class="text-gray-600">Pages Printed: <%= printer[:data][:pages_printed] %></p>
+                  <p class="text-gray-600">Toner Level: <%= printer[:data][:toner_level] %></p>
+                <% else %>
+                  <p class="text-red-500">No data available for this printer.</p>
+                <% end %>
+              </div>
+            <% end %>
+          </div>  
         <% else %>
-          <p>No data available for this printer.</p>
+          <p>No printer data available.</p>
         <% end %>
-      </div>
-    </div>
-  </div>
-  <% end %>
-<% else %>
-  <p>No printer data available.</p>
-<% end %>
+  </div>      
+
+<!-- New Printer Button -->
 <a href="/new">
   <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
     New Printer
   </button>
 </a>
+</div>
+
+
 <script src="/js/flowbite.js"></script>
 </body>
 </html>
