@@ -14,7 +14,13 @@ module.exports = {
       white: colors.white,
       'black': colors.black,
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'printers-pattern': "url('/images/printer-backdrop.png')",
+        'lt-prntr-pttrn': "url('/images/lt-printer-backdrop.png')",
+        'palette-logo.png': "url('/images/colors-icon.png')",
+      }
+    },
   },
   plugins: [
     require('flowbite/plugin')
