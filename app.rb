@@ -8,6 +8,7 @@ printer_config = JSON.parse(File.read('printers.json'))
 COMMON_OIDS = printer_config['common_oids']
 PRINTERS = printer_config['printers']
 
+# Helper method to fetch printer data using SNMP
 def fetch_printer_data(printer_ip, common_oids, specific_oids)
   data = {}
   if ENV['RACK_ENV'] == 'development'
@@ -28,6 +29,7 @@ def fetch_printer_data(printer_ip, common_oids, specific_oids)
   data
 end
 
+# Main page route
 get '/' do
   @fetch_printers_data = if ENV['RACK_ENV'] == 'development'
                            MOCK_PRINTERS.map do |printer|

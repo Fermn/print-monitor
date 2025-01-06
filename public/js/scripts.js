@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => {
           console.error('Error fetching printer data:', error);
           // Update the bento grid with the printer data
-          // document.getElementById('printer-model').innerHTML = data.model;
-          // document.getElementById('printer-ip').textContent = data.printer_ip;
-          // document.getElementById('printer-toner').textContent = data.data.toner_level;
+          document.getElementById('printer-model').innerHTML = data.model;
+          document.getElementById('printer-ip').textContent = data.printer_ip;
+          document.getElementById('printer-toner').textContent = data.data.toner_level;
         });
     });
   });
