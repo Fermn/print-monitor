@@ -33,7 +33,7 @@ get '/' do
                            MOCK_PRINTERS.map do |printer|
                              {
                                alias: printer[:alias],
-                               ip: printer[:printer_ip],
+                               printer_ip: printer[:printer_ip],
                                model: printer[:model],
                                data: printer[:data]
                              }
@@ -43,7 +43,7 @@ get '/' do
                              data = fetch_printer_data(printer['printer_ip'], COMMON_OIDS, printer['specific_oids'])
                              {
                                alias: printer['alias'],
-                               ip: printer['printer_ip'],
+                               printer_ip: printer['printer_ip'],
                                model: data['model'],
                                data: data
                              }
@@ -69,4 +69,10 @@ post '/' do
     f.write(JSON.pretty_generate({ 'common_oids' => COMMON_OIDS, 'printers' => PRINTERS }))
   end
   redirect '/'
+end
+
+get '/printers/:printer_ip' do
+  content_type :json
+  printer = @fetch_printers_data.find { |p| p[:printer_ip] == params[:printer_ip] }
+  printer.to_json
 end
