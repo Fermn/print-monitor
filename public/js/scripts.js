@@ -16,9 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
           // Debugging: Log the data object
           console.log('Fetched data:', data);
           if (data) {
-            document.getElementById('printer-model').innerHTML = data.model || 'Model not found';
+            document.getElementById('printer-model').textContent = data.model || 'Model not found';
             document.getElementById('printer-ip').textContent = data.printer_ip || 'IP address not found';
-            document.getElementById('printer-toner').textContent = data.toner_level || 'Cartridge levels not found';
+            document.getElementById('black-toner').textContent = data.toner.black_level || 'Cartridge levels not found';
+            document.getElementById('yellow-toner').textContent = data.toner.yellow_level || 'Cartridge levels not found';
+            document.getElementById('cyan-toner').textContent = data.toner.cyan_level || 'Cartridge levels not found';
+            document.getElementById('magenta-toner').textContent = data.toner.magenta_level || 'Cartridge levels not found';
           } else {
             console.error('No data found for the printer.');
           }
