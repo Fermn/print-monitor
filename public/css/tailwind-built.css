@@ -1556,6 +1556,22 @@ input:checked + .toggle-bg {
   font-size: 0.875rem;
   line-height: 1.5rem;
 }
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-2xl\/6 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+.text-5xl\/6 {
+  font-size: 3rem;
+  line-height: 1.5rem;
+}
 .font-medium {
   font-weight: 500;
 }
