@@ -16,9 +16,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'printers-pattern': "url('/images/printer-backdrop.png')",
-        'lt-prntr-pttrn': "url('/images/lt-printer-backdrop.png')",
-        'palette-logo.png': "url('/images/colors-icon.png')",
+        'printers-pattern': "url('/images/printers_5%.png')",
       }
     },
   },
