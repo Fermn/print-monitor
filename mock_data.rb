@@ -4,6 +4,12 @@ MOCK_PRINTERS = [
     status: 'Online',
     alias: 'Printer 1',
     model: 'Model H',
+    monitor: {
+      firmware: '1.0.0',
+      uptime: '12 days',
+      mac_address: 'xx:xx:xx:xx:xx:xx',
+      serial_number: '1234567890'
+    },
     impressions: {
       total: '8561',
       bw: '654',
@@ -22,6 +28,12 @@ MOCK_PRINTERS = [
     status: 'Offline',
     alias: 'Printer 2',
     model: 'Model V',
+    monitor: {
+      firmware: '1.0.0',
+      uptime: '12 days',
+      mac_address: 'xx:xx:xx:xx:xx:xx',
+      serial_number: '1234567890'
+    },
     impressions: {
       total: '5426',
       bw: '423',
@@ -40,6 +52,12 @@ MOCK_PRINTERS = [
     status: 'Online',
     alias: 'Printer 3',
     model: 'Model A',
+    monitor: {
+      firmware: '1.0.0',
+      uptime: '12 days',
+      mac_address: 'xx:xx:xx:xx:xx:xx',
+      serial_number: '1234567890'
+    },
     impressions: {
       total: '7845',
       bw: '654',
@@ -58,6 +76,12 @@ MOCK_PRINTERS = [
     status: 'Offline',
     alias: 'Printer 4',
     model: 'Model C',
+    monitor: {
+      firmware: '1.0.0',
+      uptime: '12 days',
+      mac_address: 'xx:xx:xx:xx:xx:xx',
+      serial_number: '1234567890'
+    },
     impressions: {
       total: '9654',
       bw: '564',
@@ -76,6 +100,12 @@ MOCK_PRINTERS = [
     status: 'Online',
     alias: 'Printer 5',
     model: 'Model F',
+    monitor: {
+      firmware: '1.0.0',
+      uptime: '12 days',
+      mac_address: 'xx:xx:xx:xx:xx:xx',
+      serial_number: '1234567890'
+    },
     impressions: {
       total: '6521',
       bw: '523',
@@ -94,6 +124,12 @@ MOCK_PRINTERS = [
     status: 'Offline',
     alias: 'Printer 6',
     model: 'Model T',
+    monitor: {
+      firmware: '1.0.0',
+      uptime: '12 days',
+      mac_address: 'xx:xx:xx:xx:xx:xx',
+      serial_number: '1234567890'
+    },
     impressions: {
       total: '9542',
       bw: '455',
@@ -112,6 +148,12 @@ MOCK_PRINTERS = [
     status: 'Online',
     alias: 'Printer 7',
     model: 'Model A',
+    monitor: {
+      firmware: '1.0.0',
+      uptime: '12 days',
+      mac_address: 'xx:xx:xx:xx:xx:xx',
+      serial_number: '1234567890'
+    },
     impressions: {
       total: '6541',
       bw: '325',
@@ -130,6 +172,12 @@ MOCK_PRINTERS = [
     status: 'Offline',
     alias: 'Printer 8',
     model: 'Model B',
+    monitor: {
+      firmware: '1.0.0',
+      uptime: '12 days',
+      mac_address: 'xx:xx:xx:xx:xx:xx',
+      serial_number: '1234567890'
+    },
     impressions: {
       total: '3212',
       bw: '878',
