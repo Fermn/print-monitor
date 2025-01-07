@@ -27,6 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('bw-impressions').textContent = data.impressions.bw || 'Impression not found';
             document.getElementById('color-impressions').textContent = data.impressions.color || 'Impression not found';
             document.getElementById('total-impressions').textContent = data.impressions.total || 'Impression not found';
+            document.getElementById('firmware').textContent = data.monitor.firmware || 'Firmware not found';
+            document.getElementById('uptime').textContent = data.monitor.uptime || 'Uptime not found';
+            document.getElementById('mac-address').textContent = data.monitor.mac_address || 'MAC not found';
+            document.getElementById('serial-number').textContent = data.monitor.serial_number || 'Serial number not found';
           } else {
             console.error('No data found for the printer.');
           }
