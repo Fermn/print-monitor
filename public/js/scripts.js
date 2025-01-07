@@ -4,38 +4,27 @@ document.addEventListener('DOMContentLoaded', function() {
     link.addEventListener('click', function(event) {
       event.preventDefault();
       const printerIp = this.getAttribute('data-printer-ip');
-      fetch(`/printers/${printerIp}`)
+      fetch(`/fetch_printer_data`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ printer_ip: printerIp })
+      })
         .then(response => response.json())
         .then(data => {
           // Debugging: Log the data object
           console.log('Fetched data:', data);
-
-          // Check if the data object contains the model property
-          if (data && data.model) {
-            // Debugging: Log the model value
-            console.log('Model:', data.model);
-
-            // Update the bento grid with the printer data
-            const printerModelElement = document.getElementById('printer-model');
-
-            // Debugging: Log the element to ensure it is selected correctly
-            console.log('Printer model element:', printerModelElement);
-
-            if (printerModelElement) {
-              printerModelElement.innerHTML = data.model;
-            } else {
-              console.error('Element with id "printer-model" not found.');
-            }
+          if (data) {
+            document.getElementById('printer-model').innerHTML = data.model || 'Model not found';
+            document.getElementById('printer-ip').textContent = data.printer_ip || 'IP address not found';
+            document.getElementById('printer-toner').textContent = data.toner_level || 'Cartridge levels not found';
           } else {
-            console.error('Model property not found in data.');
+            console.error('No data found for the printer.');
           }
-        })
+        })  
         .catch(error => {
           console.error('Error fetching printer data:', error);
-          // Update the bento grid with the printer data
-          document.getElementById('printer-model').innerHTML = data.model;
-          document.getElementById('printer-ip').textContent = data.printer_ip;
-          document.getElementById('printer-toner').textContent = data.data.toner_level;
         });
     });
   });

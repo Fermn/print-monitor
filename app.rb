@@ -55,6 +55,23 @@ get '/' do
   erb :index
 end
 
+# Route to handle fetching printer data
+post '/fetch_printer_data' do
+  request.body.rewind
+  request_payload = JSON.parse(request.body.read)
+  printer_ip = request_payload['printer_ip']
+  specific_oids = {} # Add any specifi OIDSs if needed
+  data = fetch_printer_data(printer_ip, COMMON_OIDS, specific_oids)
+  content_type :json
+  data.to_json
+end
+
+get '/printers/:printer_ip' do
+  content_type :json
+  printer = @fetch_printers_data.find { |p| p[:printer_ip] == params[:printer_ip] }
+  printer.to_json
+end
+
 get '/new' do
   erb :new_printer
 end
@@ -71,10 +88,4 @@ post '/' do
     f.write(JSON.pretty_generate({ 'common_oids' => COMMON_OIDS, 'printers' => PRINTERS }))
   end
   redirect '/'
-end
-
-get '/printers/:printer_ip' do
-  content_type :json
-  printer = @fetch_printers_data.find { |p| p[:printer_ip] == params[:printer_ip] }
-  printer.to_json
 end
