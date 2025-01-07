@@ -13,7 +13,9 @@ def fetch_printer_data(printer_ip, common_oids, specific_oids)
   data = {}
   if ENV['RACK_ENV'] == 'development'
     MOCK_PRINTERS.each do |printer|
-      return printer[:data] if printer[:printer_ip] == printer_ip
+      # This is only returning the nested data from the printer[:data] hash
+      # return printer[:data] if printer[:printer_ip] == printer_ip
+      return printer if printer[:printer_ip] == printer_ip
     end
   else
     SNMP::Manager.open(host: printer_ip) do |manager|
@@ -78,6 +80,7 @@ end
 
 post '/' do
   printer = {
+    'model' => params[:model],
     'alias' => params[:alias],
     'printer_ip' => params[:printer_ip],
     'specific_oids' => params[:specific_oids] || {}
