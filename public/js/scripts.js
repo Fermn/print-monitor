@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('yellow-toner').textContent = data.toner.yellow_level || 'Cartridge levels not found';
             document.getElementById('cyan-toner').textContent = data.toner.cyan_level || 'Cartridge levels not found';
             document.getElementById('magenta-toner').textContent = data.toner.magenta_level || 'Cartridge levels not found';
+            document.getElementById('bw-impressions').textContent = data.impressions.bw || 'Impression not found';
+            document.getElementById('color-impressions').textContent = data.impressions.color || 'Impression not found';
+            document.getElementById('total-impressions').textContent = data.impressions.total || 'Impression not found';
           } else {
             console.error('No data found for the printer.');
           }
