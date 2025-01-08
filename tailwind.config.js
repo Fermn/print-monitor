@@ -17,7 +17,11 @@ module.exports = {
     extend: {
       backgroundImage: {
         'printers-pattern': "url('/images/printers_5%.png')",
-      }
+      },
+      fontFamily: {
+        'robotoMono': ['RobotoMono', 'monospace'],
+        'spectralLight': ['Spectral Light', 'serif'],
+      },
     },
   },
   plugins: [

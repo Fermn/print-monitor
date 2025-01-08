@@ -3,3 +3,16 @@
 @tailwind utilities;
 /* Import Flowbite's base styles */
 @import "flowbite";
+@font-face {
+ font-family: 'RobotoMono';
+ src: url('/fonts/RobotoMono-VariableFont_wght.ttf') format('truetype');
+ font-weight: 100 900; /* supports weights from 100 to 900 */
+ font-style: normal; 
+}
+
+@font-face {
+  font-family: 'Spectral-Light';
+  src: url('/fonts/Spectral-Light.ttf') format('truetype');
+  font-weight: light;
+  font-style: normal;
+}
