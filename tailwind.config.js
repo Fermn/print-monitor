@@ -20,7 +20,7 @@ module.exports = {
       },
       fontFamily: {
         'robotoMono': ['RobotoMono', 'monospace'],
-        'spectralLight': ['Spectral Light', 'serif'],
+        'staatliches': ['Staatliches', 'serif'],
       },
     },
   },

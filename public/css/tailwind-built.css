@@ -1535,8 +1535,8 @@ input:checked + .toggle-bg {
 .font-robotoMono {
   font-family: RobotoMono, monospace;
 }
-.font-spectralLight {
-  font-family: Spectral Light, serif;
+.font-staatliches {
+  font-family: Staatliches, serif;
 }
 .text-4xl {
   font-size: 2.25rem;
@@ -1566,14 +1566,14 @@ input:checked + .toggle-bg {
   font-size: 0.875rem;
   line-height: 1.5rem;
 }
+.font-bold {
+  font-weight: 700;
+}
 .font-medium {
   font-weight: 500;
 }
 .font-semibold {
   font-weight: 600;
-}
-.font-bold {
-  font-weight: 700;
 }
 .uppercase {
   text-transform: uppercase;
@@ -1589,6 +1589,12 @@ input:checked + .toggle-bg {
 }
 .tracking-tight {
   letter-spacing: -0.025em;
+}
+.tracking-normal {
+  letter-spacing: 0em;
+}
+.tracking-wide {
+  letter-spacing: 0.025em;
 }
 .text-blue-600 {
   --tw-text-opacity: 1;
@@ -1708,17 +1714,29 @@ input:checked + .toggle-bg {
 .duration-75 {
   transition-duration: 75ms;
 }
+.duration-100 {
+  transition-duration: 100ms;
+}
+.duration-500 {
+  transition-duration: 500ms;
+}
 .ease-linear {
   transition-timing-function: linear;
 }
 .ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 .\[container-type\:inline-size\] {
   container-type: inline-size;
 }
-/* Import Flowbite's base styles */
+
+/* Import*/
 @import "flowbite";
+
+/* Custom CSS */
 @font-face {
  font-family: 'RobotoMono';
  src: url('/fonts/RobotoMono-VariableFont_wght.ttf') format('truetype');
@@ -1727,9 +1745,9 @@ input:checked + .toggle-bg {
 }
 
 @font-face {
-  font-family: 'Spectral-Light';
-  src: url('/fonts/Spectral-Light.ttf') format('truetype');
-  font-weight: light;
+  font-family: 'Staatliches';
+  src: url('/fonts/Staatliches-Regular.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
 }
 

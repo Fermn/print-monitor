@@ -2,12 +2,11 @@
 <html>
 <head>
   <title>Printer Status</title>
-  <link rel="stylesheet" href="/css/fonts/tailwind.css">
   <link rel="stylesheet" href="/css/tailwind-built.css"> 
 </head>
 <body>
 <!-- drawer component -->
-<div id="drawer-navigation" class="fixed bg-white dark:bg-gray-800 top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full" tabindex="-1" aria-labelledby="drawer-navigation-label">
+<div id="drawer-navigation" class="fixed bg-white dark:bg-gray-800 top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform duration-500 ease-in-out -translate-x-full" tabindex="-1" aria-labelledby="drawer-navigation-label">
     <h5 id="drawer-navigation-label" class="text-base text-center font-semibold text-gray-500 uppercase dark:text-gray-400">Printers</h5>
     <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
         <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -31,16 +30,16 @@
 </div>
   <div class="bg-printers-pattern py-24 sm:py-32"> <!-- bg-gray-50 -->
   <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-    <h2 class="font-robotoMono text-center text-base/7 font-semibold text-indigo-600 drop-shadow-md">Dashboard</h2>
-    <p class="font-robotoMono mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-bold tracking-tight text-gray-950 sm:text-5xl drop-shadow-xl">Printer Status</p>
+    <h2 class="font-robotoMono text-center text-base/7 font-semibold text-gray-600 drop-shadow-md">Dashboard</h2>
+    <p class="font-staatliches mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-bold tracking-tight text-gray-950 sm:text-5xl drop-shadow-xl">Printer Status</p>
     <div class="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
       <div class="relative lg:row-span-2">
         <div class="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
         <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)] shadow-2xl"> <!-- box shadow -->
           <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
-            <p id="printer-status" class="font-spectralLight mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">lorem ipsum</p>
-            <p id="printer-model" class="font-robotoMono mt-2 max-w-lg text-4xl/6 font-semibold text-gray-950 max-lg:text-center">lorem ipsum</p>
-            <p id="printer-alias" class="font-spectralLight mt-2 max-w-lg text-sm/6 font-medium text-gray-600 max-lg:text-center">lorem ipsum</p>
+            <p id="printer-status" class="font-robotoMono mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">lorem ipsum</p>
+            <p id="printer-model" class="mt-2 max-w-lg text-4xl/6 font-staatliches font-semibold text-gray-950 max-lg:text-center">lorem ipsum</p>
+            <p id="printer-alias" class="font-robotoMono mt-2 max-w-lg text-sm/6 font-medium text-gray-600 max-lg:text-center">lorem ipsum</p>
           </div>
           <div class="relative min-h-[30rem] w-full grow [container-type:inline-size] max-lg:mx-auto max-lg:max-w-sm">
             <div class="absolute inset-x-10 bottom-0 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl">
@@ -54,22 +53,22 @@
         <div class="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]"></div>
         <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] shadow-2xl"> <!-- box shadow -->
           <div class="px-8 pt-8 sm:px-10 sm:pt-10">
-            <p class="font-robotoMono mt-2 text-lg font-semibold tracking-tight text-gray-950 max-lg:text-center">IP</p>
-            <p id="printer-ip" class="font-spectralLight mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center"></p>
+            <p id="printer-ip" class="mt-2 text-4xl/6 font-staatliches font-semibold tracking-wide text-gray-950 max-lg:text-center">IP</p>
+            <!-- <p id="printer-ip" class="font-spectralLight mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center"></p> -->
             <div class="flex">
-              <p class="font-spectralLight mt-2 mr-1 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Firmware:</p>
+              <p class="font-robotoMono mt-2 mr-1 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Firmware:</p>
               <p id="firmware" class="font-spectralLight max-w-lg text-sm/6 text-gray-600 max-lg:text-center mt-2"></p>
             </div>
             <div class="flex">
-              <p class="font-spectralLight mt-2 mr-1 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Uptime:</p>
+              <p class="font-robotoMono mt-2 mr-1 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Uptime:</p>
               <p id="uptime" class="font-spectralLight max-w-lg text-sm/6 text-gray-600 max-lg:text-center mt-2"></p>
             </div>
             <div class="flex">
-              <p class="font-spectralLight mt-2 mr-1 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">MAC:</p>
+              <p class="font-robotoMono mt-2 mr-1 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">MAC:</p>
               <p id="mac-address" class="font-spectralLight max-w-lg tet-sm/6 text-gray-600 max-lg:text-center mt-2"></p>
             </div>
             <div class="flex">
-              <p class="font-spectralLight mt-2 mr-1 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Serial:</p>
+              <p class="font-robotoMono mt-2 mr-1 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Serial:</p>
               <p id="serial-number" class="font-spectralLight max-w-lg text-sm/6 text-gray-600 max-lg:text-center mt-2"></p>
             </div>
           </div>
@@ -83,17 +82,17 @@
         <div class="absolute inset-px rounded-lg bg-white"></div>
         <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] shadow-2xl">
           <div class="px-8 pt-8 sm:px-10 sm:pt-10">
-            <p class="font-robotoMono mt-2 text-lg font-semibold tracking-tight text-gray-950 max-lg:text-center">Page Impressions</p>
+            <p class="mt-2 text-lg font-staatliches font-semibold tracking-wide text-gray-950 max-lg:text-center">Page Impressions</p>
             <div class="flex">
-              <p class="font-spectralLight mt-2 mr-1 max-w-lg text-sm/6 font-medium text-gray-950 max-lg:text-center">Black & White:</p>
+              <p class="font-robotoMono mt-2 mr-1 max-w-lg text-sm/6 font-medium text-gray-600 max-lg:text-center">Black & White:</p>
               <p id="bw-impressions" class="font-spectralLight mt-2 max-w-lg text-sm/6 font-medium text-gray-600 max-lg:text-center">lorem ipsum</p>
             </div>
             <div class="flex">
-              <p class="font-spectralLight mt-2 mr-1 max-w-lg text-sm/6 font-medium text-gray-950 max-lg:text-center">Color:</p>
+              <p class="font-robotoMono mt-2 mr-1 max-w-lg text-sm/6 font-medium text-gray-600 max-lg:text-center">Color:</p>
               <p id="color-impressions" class="font-spectralLight mt-2 max-w-lg text-sm/6 font-medium text-gray-600 max-lg:text-center">lorem ipsum</p>
             </div>
             <div class="flex">
-              <p class="font-spectralLight mt-2 mr-1 max-w-lg text-sm/6 font-medium text-gray-950 max-lg:text-center">Total:</p>
+              <p class="font-robotoMono mt-2 mr-1 max-w-lg text-sm/6 font-medium text-gray-600 max-lg:text-center">Total:</p>
               <p id="total-impressions" class="font-spectralLight mt-2 max-w-lg text-sm/6 font-medium text-gray-600 max-lg:text-center">lorem ipsum</p>
             </div>
           </div>
@@ -107,21 +106,21 @@
         <div class="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
         <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)] shadow-2xl">
           <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
-            <p class="font-robotoMono mt-2 text-lg font-semibold tracking-tight text-gray-950 max-lg:text-center">Toner Levels</p>
+            <p class="mt-2 text-lg font-staatliches font-semibold tracking-normal text-gray-950 max-lg:text-center">Toner Levels</p>
             <div class="flex">
-            <p class="font-spectralLight mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center mr-1">Black:</p>
+            <p class="font-robotoMono mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center mr-1">Black:</p>
             <p id="black-toner" class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center"></p>
             </div>
             <div class="flex">
-            <p class="font-spectralLight mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center mr-1">Yellow:</p>
+            <p class="font-robotoMono mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center mr-1">Yellow:</p>
             <p id="yellow-toner" class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center"></p>
             </div>
             <div class="flex">
-            <p class="font-spectralLight mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center mr-1">Cyan</p>
+            <p class="font-robotoMono mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center mr-1">Cyan</p>
             <p id="cyan-toner" class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center"></p>
             </div>
             <div class="flex">
-            <p class="font-spectralLight mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center mr-1">Magenta:</p>
+            <p class="font-robotoMono mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center mr-1">Magenta:</p>
             <p id="magenta-toner" class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center"></p>
             </div>
 
@@ -149,7 +148,7 @@
     <span class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
         <span class="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
         <span class="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
-        <span class="relative font-robotoMono" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">Menu</span>
+        <span class="relative font-staatliches" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">Menu</span>
     </span>
     <span class="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-lg"></span>
   </a>

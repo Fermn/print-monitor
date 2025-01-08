@@ -1,8 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* Import Flowbite's base styles */
+
+/* Import*/
 @import "flowbite";
+
+/* Custom CSS */
 @font-face {
  font-family: 'RobotoMono';
  src: url('/fonts/RobotoMono-VariableFont_wght.ttf') format('truetype');
@@ -11,8 +14,8 @@
 }
 
 @font-face {
-  font-family: 'Spectral-Light';
-  src: url('/fonts/Spectral-Light.ttf') format('truetype');
-  font-weight: light;
+  font-family: 'Staatliches';
+  src: url('/fonts/Staatliches-Regular.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
 }
