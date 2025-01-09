@@ -13,10 +13,13 @@ module.exports = {
       'shell-green': '#ecede7',
       white: colors.white,
       'black': colors.black,
+      'model-bg': '#b3e2f6',
+      'paper-bois': '#feeeab',
     },
     extend: {
       backgroundImage: {
         'printers-pattern': "url('/images/printers_5%.png')",
+        'print-kit': "url('/images/print-kit.png')",
       },
       fontFamily: {
         'robotoMono': ['RobotoMono', 'monospace'],

@@ -17,10 +17,7 @@
     <% @fetch_printers_data.each do |printer| %>
       <li>
         <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" data-printer-ip="<%= printer[:printer_ip] %>">
-          <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
-            <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
-            <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
-          </svg>
+          <img class="w-5 h-5" src="/images/printer-icon.png" alt="">
           <span class="ms-3"><%= printer[:alias] %></span>
         </a>
       </li>
@@ -35,7 +32,7 @@
     <div class="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
       <div class="relative lg:row-span-2">
         <div class="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
-        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)] shadow-2xl"> <!-- box shadow -->
+        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)] shadow-2xl bg-paper-bois"> <!-- box shadow -->
           <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
             <p id="printer-ip" class="mt-2 text-4xl/6 font-staatliches font-semibold tracking-wide text-gray-950 max-lg:text-center">IP</p>
             <div class="flex mt-3">
@@ -55,24 +52,25 @@
               <p id="serial-number" class="font-spectralLight max-w-lg text-sm/6 text-gray-600 max-lg:text-center mt-2"></p>
             </div>
           </div>
-          <div class="relative min-h-[30rem] w-full grow [container-type:inline-size] max-lg:mx-auto max-lg:max-w-sm">
-            <div class="absolute inset-x-10 bottom-0 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl">
-              <img class="size-fit object-cover object-top" src="/images/printer-machine.png" alt="">
-            </div>
+          <div class="relative min-h-[30rem] w-full grow [container-type:inline-size] max-lg:mx-auto max-lg:max-w-sm top-10 relative">
+            <img class="h-[min(152px, 40cqw)] object-cover absolute bottom-5" src="/images/paper-bois.png" alt="">
+            <!-- <div class="absolute inset-x-10 bottom-0 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl">
+              <img class="h-[min(152px, 40cqw)] object-cover" src="/images/paper-bois.png" alt="">
+            </div> -->
           </div>
         </div>
-        <div class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 lg:rounded-l-[2rem]"></div>
+       <!-- <div class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 lg:rounded-l-[2rem]"></div> -->
       </div>
       <div class="relative max-lg:row-start-1">
         <div class="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]"></div>
-        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] shadow-2xl"> <!-- box shadow -->
+        <div class="relative flex h-full flex-col bg-model-bg overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] shadow-2xl"> <!-- box shadow -->
           <div class="px-8 pt-8 sm:px-10 sm:pt-10">
             <p id="printer-status" class="font-robotoMono mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">lorem ipsum</p>
             <p id="printer-model" class="mt-2 max-w-lg text-4xl/6 font-staatliches font-semibold text-gray-950 max-lg:text-center">lorem ipsum</p>
             <p id="printer-alias" class="font-robotoMono mt-2 max-w-lg text-sm/6 font-medium text-gray-600 max-lg:text-center">lorem ipsum</p>
           </div>
           <div class="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
-            <img class="w-full max-lg:max-w-xs" src="https://tailwindui.com/plus/img/component-images/bento-03-performance.png" alt="">
+            <img class="w-full max-lg:max-w-xs" src="/images/model.gif" alt="">
           </div>
         </div>
         <div class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-t-[2rem]"></div>
@@ -95,8 +93,8 @@
               <p id="total-impressions" class="font-spectralLight mt-2 max-w-lg text-sm/6 font-medium text-gray-600 max-lg:text-center">lorem ipsum</p>
             </div>
           </div>
-          <div class="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
-            <img class="h-[min(152px,40cqw)] object-cover" src="https://tailwindui.com/plus/img/component-images/bento-03-security.png" alt="">
+          <div class="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">          
+            <!-- <img class="h-[min(152px,40cqw)] object-cover" src="https://tailwindui.com/plus/img/component-images/bento-03-security.png" alt=""> -->
           </div>
         </div>
         <div class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5"></div>
