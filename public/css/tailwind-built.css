@@ -1058,6 +1058,9 @@ input:checked + .toggle-bg {
 .left-10 {
   left: 2.5rem;
 }
+.left-5 {
+  left: 1.25rem;
+}
 .right-0 {
   right: 0px;
 }
@@ -1069,6 +1072,18 @@ input:checked + .toggle-bg {
 }
 .top-2\.5 {
   top: 0.625rem;
+}
+.left-40 {
+  left: 10rem;
+}
+.top-3 {
+  top: 0.75rem;
+}
+.top-20 {
+  top: 5rem;
+}
+.bottom-20 {
+  bottom: 5rem;
 }
 .z-10 {
   z-index: 10;
@@ -1311,6 +1326,9 @@ input:checked + .toggle-bg {
 .overflow-hidden {
   overflow: hidden;
 }
+.overflow-clip {
+  overflow: clip;
+}
 .overflow-y-auto {
   overflow-y: auto;
 }
@@ -1395,6 +1413,17 @@ input:checked + .toggle-bg {
   --tw-border-opacity: 1;
   border-color: rgb(17 24 39 / var(--tw-border-opacity, 1));
 }
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+}
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
+}
+.border-transparent {
+  border-color: transparent;
+}
 .border-b-white\/20 {
   border-bottom-color: rgb(255 255 255 / 0.2);
 }
@@ -1439,6 +1468,10 @@ input:checked + .toggle-bg {
   --tw-bg-opacity: 1;
   background-color: rgb(179 226 246 / var(--tw-bg-opacity, 1));
 }
+.bg-paper-bois {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 238 171 / var(--tw-bg-opacity, 1));
+}
 .bg-transparent {
   background-color: transparent;
 }
@@ -1452,12 +1485,11 @@ input:checked + .toggle-bg {
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
 }
-.bg-paper-bois {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 238 171 / var(--tw-bg-opacity, 1));
-}
 .bg-printers-pattern {
   background-image: url('/images/printers_5%.png');
+}
+.bg-grey-pattern {
+  background-image: url('/images/paper-stack-bg.gif');
 }
 .object-cover {
   -o-object-fit: cover;

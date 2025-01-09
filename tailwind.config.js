@@ -20,6 +20,7 @@ module.exports = {
       backgroundImage: {
         'printers-pattern': "url('/images/printers_5%.png')",
         'print-kit': "url('/images/print-kit.png')",
+        'grey-pattern': "url('/images/paper-stack-bg.gif')",
       },
       fontFamily: {
         'robotoMono': ['RobotoMono', 'monospace'],
