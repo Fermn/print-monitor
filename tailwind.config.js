@@ -21,6 +21,7 @@ module.exports = {
         'printers-pattern': "url('/images/printers_5%.png')",
         'print-kit': "url('/images/print-kit.png')",
         'grey-pattern': "url('/images/paper-stack-bg.gif')",
+        'grid-pattern': "url('/images/grid.png')",
       },
       fontFamily: {
         'robotoMono': ['RobotoMono', 'monospace'],
